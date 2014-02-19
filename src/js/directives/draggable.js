@@ -1,7 +1,7 @@
 
 module.exports = function(app){
 
-app.directive('myDraggable', function($document){
+app.directive('ngDraggable', function($document){
   return function(scope, element, attr){
     var height = element[0].clientHeight
     var width = element[0].clientWidth

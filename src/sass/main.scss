@@ -1,40 +1,98 @@
-html, body {
-    width:100%;
-    height:100%;
-    padding:0;
-    margin:0;
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Merriweather Sans Light'), local('MerriweatherSans-Light'), url(/assets/fonts/merriweathersans-light.woff) format('woff');
+}
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather Sans Regular'), local('MerriweatherSans-Regular'), url(/assets/fonts/merriweathersans-regular.woff) format('woff');
+}
+
+
+
+/* -- core theme -- */
+* { box-sizing:border-box; }
+html {
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
 }
 body {
-    background:white;
-    background-size:100%;
+  @extend html;
+  background:white;
+  background-size:100%;
+
+  color: rgb(68, 68, 68);
+  font-family: 'Merriweather Sans', sans-serif;
+  text-shadow: rgb(255, 255, 255) 0px 1px 0px;
 }
+a:link { text-decoration:none; color:rgb(200,100,130); }
+a:active, a:visited { @extend a }
+a:hover { color:rgb(220,120,150); }
+
+
+
+/* -- elements -- */
 .glass {
   background:rgba(219, 236, 255, 0.4);
   border-radius:3px;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 .draggable {
   whitespace:nowrap;
   overflow:hidden;
 }
-main {
-    width:100px;
-    text-align:center;
-    margin:auto;
+.window {
+  width:90%;
+  height:700px;
+  margin:auto;
+  margin-left: 5%;
+  margin-top: 50px;
+}
 
-    div {
-      width:150px;
-      height:70px;
+
+
+/* -- blocks -- */
+header {
+  position:absolute;
+  width:100%;
+  top:0;
+
+  ul {
+    text-align:center;
+
+    li {
+      margin:auto;
+      margin-left:2em;
+      margin-right:2em;
+      display:inline;
+      list-style-type:none;
     }
+  }
+}
+main {
+  width:100%;
+  text-align:center;
+  margin:auto;
+
+  div {
+    width:150px;
+    height:70px;
+  }
 }
 footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
-    text-align:center;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  text-align:center;
 
-    input {
-        width:80%;
-        margin:auto;
-        text-align:center;
-    }
+  input {
+      width:80%;
+      margin:auto;
+      text-align:center;
+  }
 }

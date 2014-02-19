@@ -1,7 +1,8 @@
 
-var app = angular.module('dragModule', [])
+var app = angular.module('sandbox', [])
 
 require('./directives/draggable')(app)
+require('./controllers/nav')(app)
 // require('./controllers/lists')(app)
 
 // app.config(function($router){

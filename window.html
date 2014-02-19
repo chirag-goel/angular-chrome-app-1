@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="dragModule">
+<html ng-app="sandbox">
 <head>
   <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
   <script src="assets/scripts/angular.js"></script>
@@ -7,15 +7,24 @@
 </head>
 
 <body>
+  <header data-ng-controller="navCtrl">
+    <ul>
+      <li data-ng-repeat="item in items">
+        <a href="{{ item.link }}">{{ item.text }}</a>
+      </li>
+    </ul>
+  </header>
+
   <main>
-    <div class="draggable glass widget" my-draggable>{{content}}</div>
-    <div class="draggable glass widget" my-draggable>{{content}}</div>
-    <div class="draggable glass widget" my-draggable>{{content}}</div>
-    <div class="draggable glass widget" my-draggable>{{content}}</div>
+    <div class="window glass" ng-model="test">
+      <h1>{{ test.title }}</h1>
+      <p>{{ test.desc }}</p>
+    </div>
+    <!-- <div class="draggable glass widget" ng-draggable>{{content}}</div> -->
   </main>
   
   <footer>
-    <input type="text" ng-model="content">
+    <!-- <input type="text" ng-model="content"> -->
   </footer>
 </body>
 </html>
