@@ -20,10 +20,6 @@ module.exports = function(grunt) {
         files: ['src/sass/*.scss', 'src/js/*.js'],
         tasks: ['sass', 'browserify']
       }
-      // js: {
-      //   files: 'src/js/*.js',
-      //   tasks: ['browserify']
-      // }
     }
   })
   grunt.loadNpmTasks('grunt-sass')
