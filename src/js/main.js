@@ -12,13 +12,21 @@ require('./controllers/users')(app)
 app.config(['$routeProvider', function($routeProvider){
 
   $routeProvider
+  .when('/', {
+    controller: 'UserCtrl',
+    templateUrl: 'src/views/user-home.html'
+  })
   .when('/settings', {
     controller: 'UserCtrl',
     templateUrl: 'src/views/settings.html'
   })
-  .when('/', {
+  .when('/profile', {
     controller: 'UserCtrl',
-    templateUrl: 'src/views/user-home.html'
+    templateUrl: 'src/views/profile.html'
+  })
+  .when('/stats', {
+    controller: 'UserCtrl',
+    templateUrl: 'src/views/stats.html'
   })
 
 }])
