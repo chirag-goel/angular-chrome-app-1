@@ -42,6 +42,14 @@ a:hover { color:rgb(220,120,150); }
   border-radius:3px;
   border: 1px solid rgba(0,0,0,0.2);
 }
+.animate-enter {
+  -webkit-transition: 1s linear all; /* Chrome */
+  transition: 1s linear all;
+  opacity: 0;
+}
+.animate-enter.animate-enter-active {
+  opacity: 1;
+}
 .draggable {
   whitespace:nowrap;
   overflow:hidden;
