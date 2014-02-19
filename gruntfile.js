@@ -8,10 +8,17 @@ module.exports = function(grunt) {
         ]
       }
     },
-    ngmin : {
+    ngmin: {
       dist: {
         files: [
           { src: 'assets/scripts/app.js', dest: 'assets/scripts/app.min.js' }
+        ]
+      }
+    },
+    uglify: {
+      dist: {
+        files: [
+          { src: 'assets/scripts/app.min.js', dest: 'assets/scripts/app.min.js' }
         ]
       }
     },
@@ -32,7 +39,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['src/sass/*.scss', 'src/js/**/*'],
-        tasks: ['sass', 'browserify', 'cssmin', 'ngmin']
+        tasks: ['sass', 'browserify', 'cssmin', 'ngmin', 'uglify']
       }
     }
   })
@@ -41,5 +48,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-cssmin')
-  grunt.registerTask('default', ['sass:dist', 'cssmin', 'watch', 'browserify:dist', 'ngmin:dist'])
+  grunt.loadNpmTasks('grunt-contrib-uglify')
+  grunt.registerTask('default', ['watch', 'sass:dist', 'cssmin', 'browserify:dist', 'ngmin:dist', 'uglify'])
 }
