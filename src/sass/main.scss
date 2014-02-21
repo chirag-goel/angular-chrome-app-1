@@ -42,14 +42,6 @@ a:hover { color:rgb(220,120,150); }
   border-radius:3px;
   border: 1px solid rgba(0,0,0,0.2);
 }
-.animate-enter {
-  -webkit-transition: 1s linear all; /* Chrome */
-  transition: 1s linear all;
-  opacity: 0;
-}
-.animate-enter.animate-enter-active {
-  opacity: 1;
-}
 .draggable {
   whitespace:nowrap;
   overflow:hidden;
@@ -58,8 +50,8 @@ a:hover { color:rgb(220,120,150); }
   width:90%;
   height:700px;
   margin:auto;
-  margin-left: 5%;
-  margin-top: 50px;
+  margin-left:5%;
+  margin-top:50px;
 }
 
 
@@ -99,8 +91,25 @@ footer {
   text-align:center;
 
   input {
-      width:80%;
-      margin:auto;
-      text-align:center;
+    width:80%;
+    margin:auto;
+    text-align:center;
   }
 }
+
+.page.ng-enter, .page.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  position:absolute;
+  right:0;
+  left:0;
+  top:0;
+}
+
+.page.ng-enter { z-index:100; opacity:0; }
+.page.ng-enter.ng-enter-active { opacity:1; }
+
+.page.ng-leave { z-index:101; opacity:1; }
+.page.ng-leave.ng-leave-active { opacity:0; }
+

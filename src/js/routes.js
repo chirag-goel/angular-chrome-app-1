@@ -1,5 +1,5 @@
 
-var app = angular.module('mainModule', ['ngRoute'])
+var app = angular.module('mainModule', ['ngRoute', 'ngAnimate'])
 
 require('./directives/draggable')(app)
 require('./directives/click')(app)
