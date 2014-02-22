@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
-<html ng-app="mainModule" ng-controller="navCtrl">
+<html ng-app="mainModule" ng-controller="RootCtrl" ng-init="initialize()">
 <head>
-  <link rel="stylesheet" type="text/css" href="assets/styles/main.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
   <script src="assets/scripts/angular.js"></script>
   <script src="assets/scripts/angular-route.js"></script>
   <script src="assets/scripts/angular-animate.min.js"></script>
@@ -9,15 +10,16 @@
 </head>
 
 <body>
-  <header>
+  <header ng-controller="NavCtrl">
     <ul>
       <li ng-repeat="item in items">
-        <a href="#" ng-click="navigate(item.link)">{{ item.text }}</a>
+        <button ng-click="navigate(item.link)">{{ item.text }}</button>
       </li>
     </ul>
   </header>
 
-  <main class="page" ng-view>
+  <main ng-view>
+    <!-- this is where the fun happens! -->
   </main>
   
   <footer>

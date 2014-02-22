@@ -5,16 +5,16 @@ require('./directives/draggable')(app)
 require('./directives/click')(app)
 
 require('./controllers/nav')(app)
-require('./controllers/lists')(app)
+require('./controllers/root')(app)
 require('./controllers/users')(app)
 
 
 app.config(['$routeProvider', function($routeProvider){
 
   $routeProvider
-  .when('/', {
+  .when('/home', {
     controller: 'UserCtrl',
-    templateUrl: 'src/views/user-home.html'
+    templateUrl: 'src/views/home.html'
   })
   .when('/settings', {
     controller: 'UserCtrl',

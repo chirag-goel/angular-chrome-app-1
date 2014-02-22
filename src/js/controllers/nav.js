@@ -1,16 +1,19 @@
 
 module.exports = function(app){
 
-app.controller('navCtrl', function($scope, $rootScope, $location){
+app.controller('NavCtrl', function($scope, $rootScope, $location){
+  $scope.currentView = 'home'
+  
   $scope.items = [
-    { text:'Home', link:'/' },
-    { text:'Profile', link:'/profile' },
-    { text:'Settings', link:'/settings' },
-    { text:'Stats', link:'/stats' },
+    { text:'Home', link:'home' },
+    { text:'Profile', link:'profile' },
+    { text:'Settings', link:'settings' },
+    { text:'Stats', link:'stats' },
   ]
 
   $scope.navigate = function(page){
     $location.path(page)
+    // $scope.currentView = page
   }
 })
 

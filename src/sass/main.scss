@@ -1,3 +1,6 @@
+
+@import url('/assets/styles/animate.min.css');
+
 @font-face {
   font-family: 'Merriweather Sans';
   font-style: normal;
@@ -51,7 +54,6 @@ a:hover { color:rgb(220,120,150); }
   height:700px;
   margin:auto;
   margin-left:5%;
-  margin-top:50px;
 }
 
 
@@ -75,6 +77,8 @@ header {
   }
 }
 main {
+  position:absolute;
+  top:50px;
   width:100%;
   text-align:center;
   margin:auto;
@@ -83,6 +87,14 @@ main {
     width:150px;
     height:70px;
   }
+}
+main.ng-enter {
+  -webkit-animation:1s fadeIn;
+  animation:1s fadeIn;
+}
+main.ng-leave {
+  -webkit-animation:1s fadeOut;
+  animation:1s fadeOut;
 }
 footer {
   position:absolute;
@@ -96,20 +108,4 @@ footer {
     text-align:center;
   }
 }
-
-.page.ng-enter, .page.ng-leave {
-  -webkit-transition:0.5s linear all;
-  transition:0.5s linear all;
-
-  position:absolute;
-  right:0;
-  left:0;
-  top:0;
-}
-
-.page.ng-enter { z-index:100; opacity:0; }
-.page.ng-enter.ng-enter-active { opacity:1; }
-
-.page.ng-leave { z-index:101; opacity:1; }
-.page.ng-leave.ng-leave-active { opacity:0; }
 
