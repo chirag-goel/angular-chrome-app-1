@@ -6,7 +6,7 @@ app.controller('RootCtrl', function($scope, $rootScope, $location){
     $scope.user = {
       name: 'Rob',
       rank: 'master',
-      tests_completed: 20000
+      completed: 20000
     }
   }
 })
