@@ -1,13 +1,19 @@
 module.exports = function(grunt) {
+
+  require('./autoload.js')
+
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
+
     browserify: {
       dist: {
         files: [
-          { src: 'src/js/*.js', dest: 'assets/scripts/app.js' }
+          { src: 'main.js', dest: 'assets/scripts/app.js' }
         ]
       }
     },
+
     ngmin: {
       dist: {
         files: [
@@ -15,6 +21,7 @@ module.exports = function(grunt) {
         ]
       }
     },
+    
     uglify: {
       dist: {
         files: [
@@ -22,6 +29,7 @@ module.exports = function(grunt) {
         ]
       }
     },
+    
     sass: {
       dist: {
         files: [
@@ -29,6 +37,7 @@ module.exports = function(grunt) {
         ]
       }
     },
+    
     cssmin: {
       css: {
         files: [
@@ -36,18 +45,22 @@ module.exports = function(grunt) {
         ]
       }
     },
+    
     watch: {
       sass: {
         files: ['src/sass/*.scss', 'src/js/**/*'],
-        tasks: ['sass', 'browserify', 'cssmin', 'ngmin', 'uglify']
+        tasks: ['exec:autoload', 'sass', 'browserify', 'cssmin', 'ngmin', 'uglify']
       }
     }
   })
+  grunt.loadNpmTasks('grunt-exec')
   grunt.loadNpmTasks('grunt-sass')
   grunt.loadNpmTasks('grunt-ngmin')
   grunt.loadNpmTasks('grunt-browserify')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-cssmin')
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.registerTask('default', ['watch', 'sass:dist', 'cssmin', 'browserify:dist', 'ngmin:dist', 'uglify'])
+  grunt.registerTask('default', [
+    'watch','sass:dist','cssmin','browserify:dist','ngmin:dist','uglify'
+  ])
 }

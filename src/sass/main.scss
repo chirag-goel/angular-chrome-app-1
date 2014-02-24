@@ -91,10 +91,12 @@ main {
 main.ng-enter {
   -webkit-animation:1s fadeIn;
   animation:1s fadeIn;
+  pointer-events:none;
 }
 main.ng-leave {
   -webkit-animation:1s fadeOut;
   animation:1s fadeOut;
+  pointer-events:none;
 }
 footer {
   position:absolute;
