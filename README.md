@@ -5,12 +5,14 @@ To build this package:
 `npm install`  
 `bower install`
 
-run once and minify:    
+Then...  
+
+to run build once and minify:    
 `grunt prod`  
 
-run once and don't minify:  
+to build once but don't minify:  
 `grunt dev`  
 
-watch for changes (doesn't minify):
+to when updated (not minified):
 `grunt`  
 
