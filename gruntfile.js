@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['src/sass/*.scss', 'src/js/**/*'],
-        tasks: ['exec:autoload', 'sass', 'browserify', 'cssmin', 'ngmin', 'uglify']
+        tasks: ['sass:dist','build:dev','browserify:dist']
       }
     }
   })
@@ -61,9 +61,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', function(type){ require('./autoload.js')(type) })
 
-  grunt.registerTask('default', [
-    'watch','sass:dist','build:dev','browserify:dist'
-  ])
+  grunt.registerTask('default', ['watch'])
+  
   grunt.registerTask('dev', [
     'sass:dist','build:dev','browserify:dist'
   ])
