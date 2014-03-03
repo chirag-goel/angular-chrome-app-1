@@ -7,12 +7,12 @@ To build this package:
 
 Then...  
 
-to run build once and minify:    
+to run build once and minify:  
 `grunt prod`  
 
 to build once but don't minify:  
 `grunt dev`  
 
-to when updated (not minified):
+to when updated (not minified):  
 `grunt`  
 
