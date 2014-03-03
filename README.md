@@ -13,6 +13,6 @@ to run build once and minify:
 to build once but don't minify:  
 `grunt dev`  
 
-to when updated (not minified):  
+to run build when updated (not minified):  
 `grunt`  
 
