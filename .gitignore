@@ -1,5 +1,7 @@
 node_modules/*
+build/lib/*
 *.log
 *.md
 assets/scripts/*
 assets/styles/*
+*.DS_Store
